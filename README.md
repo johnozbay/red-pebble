@@ -29,7 +29,7 @@ The Cloud Function also logs anonymous user IDs to change the way it responds to
 
 ## Where did the idea come from?
 
-One day [Shelby Hutchison](http://www.shdigitaldesign.com/), [Senem Cinar](http://senemcinar.com/) and [I](https://johnozbay.com) were having breakfast and we thought wouldn't be hilarious and awesome to have a home assistant that tells the weather on Mars. Then for 7 days after work, we all went home, didn't sleep, designed and coded an assistant that does just that.
+One day [Shelby Hutchison](http://www.shdigitaldesign.com/), [Senem Cinar](http://senemcinar.com/) and [I](https://johnozbay.com) were having breakfast and we thought wouldn't it be hilarious and awesome to have a home assistant that tells the weather on Mars. Then for 7 days after work, we all went home, didn't sleep, designed and coded an assistant that does just that.
 
 ## Questions, Bugs, Suggestions?
 
