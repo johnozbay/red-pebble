@@ -1,0 +1,10 @@
+{
+  "name": "red-pebble",
+  "description": "A Google Home Assistant for homesick Martians living on Earth!",
+  "version": "1.0.0",
+  "author": "John Ozbay",
+  "dependencies": {
+    "actions-on-google": "^1.0.0",
+    "firebase-admin" : "*"
+  }
+}
