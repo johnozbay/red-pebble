@@ -143,14 +143,15 @@ exports.redPebble = function redPebble(req, res) {
   // "What's the season on Mars?"
   function getSeason () {
     var season;
-    if (marsData.report.ls <= 90)                                   { season = "spring"; }
-    if ((marsData.report.ls > 90) && (marsData.report.ls <= 180))   { season = "summer"; }
-    if ((marsData.report.ls > 180) && (marsData.report.ls <= 270))  { season = "autumn"; }
-    if (marsData.report.ls > 270)                                   { season = "winter"; }
+    var sentence;
+    if (marsData.report.ls <= 90)                                   { season = "spring"; sentence = "It’s Spring at the moment, so grab those boots and come on a space walk!";}
+    if ((marsData.report.ls > 90) && (marsData.report.ls <= 180))   { season = "summer"; sentence = "It’s Summer at the moment. Bring on that sunshine!";}
+    if ((marsData.report.ls > 180) && (marsData.report.ls <= 270))  { season = "autumn"; sentence = "It’s Fall at the moment, but don’t be fooled, I’m red all year round.";}
+    if (marsData.report.ls > 270)                                   { season = "winter"; sentence = "It’s Winter, so keep a jacket handy if you’re visiting!";}
 
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getSeason" },function(){
-      assistant.ask("Currently it's the equivalent of " + season + ' on Mars!');
+      assistant.ask(sentence);
     });
   }
 
@@ -195,7 +196,7 @@ exports.redPebble = function redPebble(req, res) {
     var mins = time.split(':')[1];
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getSunset" },function(){
-      assistant.ask('The sunset is at ' + hour + " " + mins + ".");
+      assistant.ask('Where the Curiosity rover is, the sunset is at ' + hour + " " + mins + ". It’s really beautiful. Curiosity the rover even took photos of it and uploaded them online. You should check it out.");
     });
   }
 
@@ -206,7 +207,7 @@ exports.redPebble = function redPebble(req, res) {
     var mins = time.split(':')[1];
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getSunrise" },function(){
-      assistant.ask('The sunrise is at ' + hour + " " + mins + ".");
+      assistant.ask('Where the Curiosity rover is, the sunrise is at ' + hour + " " + mins + ". It’s my favourite thing to wake up to.");
     });
   }
 
