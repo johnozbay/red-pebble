@@ -13,7 +13,9 @@ The weather & atmospheric data is being transmitted by the Curiosity Rover on Ma
 We then cache this atmospheric weather information daily using Google Cloud Functions on our own servers to make sure that our assistant doesn't make tons of requests to the kind providers of the API listed above.
 
 Our cached version of the API can be found here :
-http://pebble.red/latest.json     and you're more than welcome to use our mirror for your projects. 
+http://pebble.red/latest.json     
+
+You're more than welcome to use our mirror for your projects. 
 
 Red Pebble is built using [API.AI](http://api.ai), [Google Cloud Functions](https://cloud.google.com/functions/) and [Firebase](firebase.google.com).
 
