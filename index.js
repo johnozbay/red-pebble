@@ -54,7 +54,7 @@ exports.redPebble = function redPebble(req, res) {
       if (data.val()) {
         //existing user
         firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getMarsWeather - existing" },function(){
-          assistant.ask(sentence);
+          assistant.tell(sentence);
         });
       } else {
         firebase.database().ref('users/' + userId).update({ "lastused": milliseconds },function(){
@@ -128,7 +128,7 @@ exports.redPebble = function redPebble(req, res) {
   function getEarthDate () {
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getEarthDate" },function(){
-      assistant.ask("Today's date is " + marsData.report.terrestrial_date + ' on Earth!');
+      assistant.ask("Today's date is " + marsData.report.terrestrial_date + ' on Earth! Do you have more questions? I would love to hear them.');
     });
   }
 
@@ -136,7 +136,7 @@ exports.redPebble = function redPebble(req, res) {
   function getMarsDate () {
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getMarsDate" },function(){
-      assistant.ask('Today is Sol ' + marsData.report.sol + " on Mars!");
+      assistant.ask('Today is Sol ' + marsData.report.sol + " on Mars! Do you have more questions? I'd love to hear them. ");
     });
   }
 
@@ -151,7 +151,7 @@ exports.redPebble = function redPebble(req, res) {
 
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getSeason" },function(){
-      assistant.ask(sentence);
+      assistant.ask(sentence + " What more would you like to know about my red planet self?");
     });
   }
 
@@ -159,7 +159,7 @@ exports.redPebble = function redPebble(req, res) {
   function getMinTemp () {
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getMinTemp" },function(){
-      assistant.ask('The lowest temperature on Mars today is ' + Math.floor(marsData.report.min_temp_fahrenheit) + ' degrees!');
+      assistant.ask('The lowest temperature on Mars today is ' + Math.floor(marsData.report.min_temp_fahrenheit) + ' degrees! I would love to answer more questions if you have some?');
     });
   }
 
@@ -167,7 +167,7 @@ exports.redPebble = function redPebble(req, res) {
   function getMaxTemp () {
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getMaxTemp" },function(){
-      assistant.ask('The highest temperature on Mars today is ' + Math.floor(marsData.report.max_temp_fahrenheit) + ' degrees!');
+      assistant.ask('The highest temperature on Mars today is ' + Math.floor(marsData.report.max_temp_fahrenheit) + ' degrees! What else would you like to know?');
     });
   }
 
@@ -177,7 +177,7 @@ exports.redPebble = function redPebble(req, res) {
     var fAvg = Math.floor((marsData.report.min_temp_fahrenheit + marsData.report.max_temp_fahrenheit) / 2);
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getCold" },function(){
-      assistant.ask('Yes! Today is ' + fAvg + " degrees. If you're coming to visit me, have a jacket handy.");
+      assistant.ask('Yes! Today is ' + fAvg + " degrees. If you're coming to visit me, have a jacket handy. What more would you like to know about my red planet self?");
     });
   }
 
@@ -185,7 +185,7 @@ exports.redPebble = function redPebble(req, res) {
   function getAtmPres () {
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getAtmPres" },function(){
-      assistant.ask('The average atmospheric pressure on Mars today is ' + Math.floor(marsData.report.pressure) + ' pascals!');
+      assistant.ask('The average atmospheric pressure on Mars today is ' + Math.floor(marsData.report.pressure) + ' pascals! Do you have more adventurous questions up your sleeve?');
     });
   }
 
@@ -196,7 +196,7 @@ exports.redPebble = function redPebble(req, res) {
     var mins = time.split(':')[1];
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getSunset" },function(){
-      assistant.ask('Where the Curiosity rover is, the sunset is at ' + hour + " " + mins + ". It’s really beautiful. Curiosity the rover even took photos of it and uploaded them online. You should check it out.");
+      assistant.ask('Where the Curiosity rover is, the sunset should be at ' + hour + " " + mins + ". It’s really beautiful. Curiosity the rover even took photos of it and uploaded them online. You should check it out. I'd love to answer more questions if you have some?");
     });
   }
 
@@ -207,7 +207,7 @@ exports.redPebble = function redPebble(req, res) {
     var mins = time.split(':')[1];
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "getSunrise" },function(){
-      assistant.ask('Where the Curiosity rover is, the sunrise is at ' + hour + " " + mins + ". It’s my favourite thing to wake up to.");
+      assistant.ask('Where the Curiosity rover is, the sunrise should be at ' + hour + " " + mins + ". It’s my favourite thing to wake up to. What else would you like to know?");
     });
   }
 
@@ -218,7 +218,7 @@ exports.redPebble = function redPebble(req, res) {
     var mins = time.split(':')[1];
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "doesSunset" },function(){
-      assistant.ask('Yes! The sunset is at ' + hour + " " + mins + ".");
+      assistant.ask('Yes! Where the Curiosity rover is, the sunset should be at ' + hour + " " + mins + ". Do you have more adventurous questions up your sleeve?");
     });
   }
 
@@ -229,7 +229,7 @@ exports.redPebble = function redPebble(req, res) {
     var mins = time.split(':')[1];
     var milliseconds = (new Date()).getTime();
     firebase.database().ref('stats/' + milliseconds).update({ user: userId, comm: "doesSunrise" },function(){
-      assistant.ask('Yes! The sunrise is at ' + hour + " " + mins + ".");
+      assistant.ask('Yes! Where the Curiosity rover is, the sunrise should be at ' + hour + " " + mins + ". Do you have more questions? I'd love to hear them.");
     });
   }
 
