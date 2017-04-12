@@ -14,7 +14,7 @@ We then cache this atmospheric weather information daily using Google Cloud Func
 
 Our cached version of the API can be found here :
 http://pebble.red/latest.json     
-And, you're more than welcome to use our mirror for your projects. 
+And, you're more than welcome to use our mirror for your projects. In case if you're wondering how up to date our information is, occasionally the information can be sporadic / a few days behind. Having a steady information flow from mars is tough business, and we can only mirror what we have access to from our sources. 
 
 Red Pebble is built using [API.AI](http://api.ai), [Google Cloud Functions](https://cloud.google.com/functions/) and [Firebase](firebase.google.com).
 
