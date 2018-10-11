@@ -6,7 +6,7 @@ Red Pebble, a Google Assistant &amp; Google Home bot, that tells you everything 
 
 ## How does it work?
 
-Red Pebble uses data from NASA & [Centro de Astrobiologia (CSIC-INTA)](http://www.cab.inta.es/en/inicio) using the amazing API kindly provided by [{MAAS} API](https://catalog.data.gov/dataset/mars-atmospheric-aggregation-system-api)
+Red Pebble uses data from NASA & [Centro de Astrobiologia (CSIC-INTA)](http://www.cab.inta.es/en/inicio) using the amazing [{MAAS} API](https://catalog.data.gov/dataset/mars-atmospheric-aggregation-system-api)
 
 The weather & atmospheric data is being transmitted by NASA's Curiosity Rover on Mars.
 
